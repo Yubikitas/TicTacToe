@@ -6,7 +6,7 @@
     grid-template-rows: repeat(3, 1fr);
     border: 1px solid black;
     gap: 2px;
-    padding: 2px;
+    padding: 0; /* Reset padding to avoid extra spacing around cells */
     background-color: yellow;
   }
   
@@ -19,4 +19,6 @@
     border: 1px solid grey;
     background: lightyellow;
     cursor: pointer;
+    width: 100%; /* Ensure each cell fills its grid space */
+    height: 100%; /* Ensure each cell fills its grid space */
   }
