@@ -122,8 +122,17 @@ function GameControl(playerOneName = "Player One", playerTwoName = "Player Two")
     };
 
     const playRound = (row, column) => {
+        if (board.getBoard()[row][column].getValue() !== 0) {
+            console.log(`Cell at ${row},${column} is already occupied.`);
+            return; // Don't proceed with placing the token or switching turns
+        }
+
+        
         board.placeToken(row, column, activePlayer.token);
         const status = checkGameStatus();
+
+
+
         if (status.gameStatus === "victory") {
             return `Player ${status.winner} wins!`;
         } else if (status.gameStatus === "tie") {
